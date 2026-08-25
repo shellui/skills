@@ -30,6 +30,7 @@ Manual copy: put `skills/shellui/` into `.agents/skills/shellui/` or `.cursor/sk
 
 - Keep skills small (token budget). Prefer bullets; link https://docs.shellui.com for depth.
 - When Shellui CLI/SDK/config breaks, update the matching skill and bump `metadata.version` + that skill’s `CHANGELOG.md`.
+- Note catalog-level changes in [CHANGELOG.md](CHANGELOG.md).
 - Add new skills under `skills/<name>/` with a valid `SKILL.md`.
 
 ## License
