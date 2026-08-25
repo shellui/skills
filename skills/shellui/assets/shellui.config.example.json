@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/@shellui/core/schemas/shellui.config.schema.json",
+  "port": 4000,
+  "title": "My App",
+  "favicon": "/favicon.svg",
+  "logo": "/logo.svg",
+  "layout": "sidebar",
+  "language": "en",
+  "navigation": [
+    {
+      "label": "Home",
+      "path": "home",
+      "url": "/",
+      "icon": "/icons/home.svg"
+    },
+    {
+      "label": "Settings",
+      "path": "settings",
+      "url": "/__settings",
+      "openIn": "modal",
+      "position": "end"
+    }
+  ]
+}
