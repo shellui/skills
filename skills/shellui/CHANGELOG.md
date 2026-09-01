@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- CLI isolation: ignore consumer Vite / PostCSS / tsconfig / `VITE_*`; cache `.vite-shellui`
+
 ## 1.0.0
 
 - Initial official shellui Agent Skill

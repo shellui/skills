@@ -9,7 +9,7 @@ description: >-
 license: MIT
 metadata:
   author: shellui
-  version: '1.0.0'
+  version: '1.0.1'
   shellui: '>=0.5.0'
 ---
 

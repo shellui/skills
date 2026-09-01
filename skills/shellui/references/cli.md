@@ -16,6 +16,10 @@ Package: `@shellui/cli` · bin: `shellui` · Node >= 18
 - `--host` — listen on `0.0.0.0`
 - `--app` — desktop (Tauri) path; see https://docs.shellui.com/tauri
 
+## Isolation
+
+The CLI ignores the project `vite.config.*`, PostCSS/Tailwind, `tsconfig`, and `VITE_*`. Cache is `node_modules/.vite-shellui`. Users only maintain their app plus `shellui.config.json` and `static/`. Colocating shell + iframe app in one folder is supported.
+
 ## After init
 
 Add `static/` assets (`favicon.svg`, `logo.svg`, `icons/`). Ensure `dist/` is gitignored (init helps).
