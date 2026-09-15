@@ -9,7 +9,7 @@ description: >-
 license: MIT
 metadata:
   author: shellui
-  version: '1.0.1'
+  version: '1.0.2'
   shellui: '>=0.5.0'
 ---
 
@@ -58,6 +58,7 @@ In iframe apps: `npm i @shellui/sdk` → `await shellui.init()` → toast / dial
 - [references/sdk.md](references/sdk.md)
 - Example: [assets/shellui.config.example.json](assets/shellui.config.example.json)
 - Features: https://docs.shellui.com (nav, themes, layouts, backend, auth)
+- Voice / UI / composition: https://shellui.com/guidelines/ ([`guidelines`](../guidelines/) skill)
 
 ## Anti-patterns
 

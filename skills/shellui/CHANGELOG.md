@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+
+- Cross-link to https://shellui.com/guidelines/ via the catalog `guidelines` skill
+
 ## 1.0.1
 
 - CLI isolation: ignore consumer Vite / PostCSS / tsconfig / `VITE_*`; cache `.vite-shellui`

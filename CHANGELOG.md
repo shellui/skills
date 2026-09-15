@@ -23,6 +23,20 @@ Individual skills also keep their own changelogs under `skills/<name>/CHANGELOG.
 See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog-emoji/master/CHANGELOG.md
 -->
 
+## [1.1.0] - 2026-09-15
+
+### ✨ Feature
+
+- Guideline skills that fetch public handbooks from https://shellui.com/guidelines/:
+  - [`guidelines`](skills/guidelines/) (v1.0.0) parent index
+  - [`design-md`](skills/design-md/) (v1.2.0) → https://shellui.com/design.md
+  - [`writing-guidelines`](skills/writing-guidelines/) (v1.0.0) → https://shellui.com/guidelines/writing.md
+  - [`web-design-guidelines`](skills/web-design-guidelines/) (v1.1.0) → https://shellui.com/guidelines/web-design.md
+
+### 📚 Documentation
+
+- README documents the guidelines hub and how catalog skills relate to shellui.com / `shellui/website`
+
 ## [1.0.0] - 2026-08-25
 
 ### ✨ Feature
