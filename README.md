@@ -17,7 +17,7 @@ This catalog ships thin skills that tell agents to **fetch** the published markd
 | [`writing-guidelines`](skills/writing-guidelines/) | https://shellui.com/guidelines/writing.md | [Writing](https://shellui.com/guidelines/writing/) |
 | [`web-design-guidelines`](skills/web-design-guidelines/) | https://shellui.com/guidelines/web-design.md | [Web design](https://shellui.com/guidelines/web-design/) |
 
-Source of truth for the handbooks: [shellui/website](https://github.com/shellui/website) (`content/guidelines/`). Skills under that repo’s `skills/` match these wrappers for local website work.
+Handbook content lives in [shellui/website](https://github.com/shellui/website) (`content/guidelines/`). The skill wrappers in this repo are the source of truth. Copies elsewhere should follow them.
 
 ## Install
 

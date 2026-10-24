@@ -1,27 +1,19 @@
 # CLI
 
-Package: `@shellui/cli` · bin: `shellui` · Node >= 18
+`npm i -D @shellui/cli` (bin `shellui`, Node >= 18).
 
-| Command                            | Purpose                                               |
-| ---------------------------------- | ----------------------------------------------------- |
-| `shellui init [root]`              | Create `shellui.config.json` (`--force` to overwrite) |
-| `shellui start` / `dev`            | Vite dev server; auto-init if no config               |
-| `shellui build`                    | Production build → `dist/`                            |
-| `shellui config migrate`           | `shellui.config.ts` → JSON (+ `.bak`)                 |
-| `shellui config split` / `unsplit` | Split or merge section config files                   |
+| Command                                    | Purpose                                         |
+| ------------------------------------------ | ----------------------------------------------- |
+| `shellui init [root]`                      | Create `shellui.config.json` (`--force`)        |
+| `shellui start` (alias `dev`)              | Dev server. Auto-inits if no config             |
+| `shellui build`                            | Production build to `dist/`                     |
+| `shellui deploy`                           | Deploy the build. Warns on missing redirect URL |
+| `shellui login` / `logout` / `whoami`      | PKCE sign-in. Token in OS keychain (or `0600`)  |
+| `shellui config migrate`                   | `shellui.config.ts` to JSON (keeps `.bak`)      |
+| `shellui config split` / `unsplit`         | Split or merge section config files             |
 
-## Useful flags
+Flags: `--config <dir|file>` (beats `SHELLUI_CONFIG`), `--host` (listen on `0.0.0.0`), `--app` (Tauri desktop, https://docs.shellui.com/tauri).
 
-- `--config <path>` — config dir or file (wins over `SHELLUI_CONFIG`)
-- `--host` — listen on `0.0.0.0`
-- `--app` — desktop (Tauri) path; see https://docs.shellui.com/tauri
+Isolation: the CLI ignores the project `vite.config.*`, PostCSS, Tailwind, `tsconfig` and `VITE_*`. Cache: `node_modules/.vite-shellui`. A shell and an iframe app can share one folder.
 
-## Isolation
-
-The CLI ignores the project `vite.config.*`, PostCSS/Tailwind, `tsconfig`, and `VITE_*`. Cache is `node_modules/.vite-shellui`. Users only maintain their app plus `shellui.config.json` and `static/`. Colocating shell + iframe app in one folder is supported.
-
-## After init
-
-Add `static/` assets (`favicon.svg`, `logo.svg`, `icons/`). Ensure `dist/` is gitignored (init helps).
-
-Docs: https://docs.shellui.com/cli · https://docs.shellui.com/installation
+After init: add `static/` (`favicon.svg`, `logo.svg`, `icons/`), keep `dist/` gitignored.

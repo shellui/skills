@@ -1,69 +1,43 @@
 ---
 name: shellui
 description: >-
-  Build and modify Shellui microfrontend shells — shellui.config.json,
-  CLI init/dev/build, themes, navigation, layouts, backend/auth, and
-  @shellui/sdk (drawers, modals, toasts, dialogs) vs tiny. Use when
-  working on shellui projects, config, embedded iframe apps, or SDK
-  integration. Never spell the product as ShellUI.
+  Use when working on a Shellui project: shellui.config.json, the shellui CLI
+  (init, start, build, deploy, login), @shellui/sdk in embedded iframe apps
+  (toast, dialog, modal, drawer, auth, storage), app frames (ShelluiFrame,
+  createAppFrame), per-app identity servers or regional token exchange. Not
+  for generic React or Vite work outside a Shellui shell.
 license: MIT
 metadata:
   author: shellui
-  version: '1.0.2'
-  shellui: '>=0.5.0'
+  version: '1.1.0'
+  shellui: '>=0.7.0-alpha.5'
 ---
 
-# shellui
+# Shellui
+
+Host shell (`@shellui/core`, run by `@shellui/cli`) embeds apps in iframes. Nav, themes, auth and overlays live in the shell. Apps talk to it through `@shellui/sdk`.
+
+## Read only what the task needs
+
+| Task                                                          | Read                                                                        |
+| ------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Create or run a shell, CLI flags, deploy, login               | [references/cli.md](references/cli.md)                                      |
+| Edit `shellui.config.json`, navigation, themes, services      | [references/config.md](references/config.md)                                |
+| Overlays, navigation, storage, tiny build in an embedded app  | [references/sdk.md](references/sdk.md)                                      |
+| App inside an app, per-app identity server, regional sessions | [references/frames-and-auth.md](references/frames-and-auth.md)              |
+| Write user-facing copy (UI strings, docs, emails)             | Fetch https://shellui.com/guidelines/writing.md (`writing-guidelines` skill) |
+| Build a page or shell chrome                                  | Fetch https://shellui.com/design.md and https://shellui.com/guidelines/web-design.md (`design-md`, `web-design-guidelines` skills) |
+
+Fetch guideline `.md` files only for copy or UI work. Hub: https://shellui.com/guidelines/. API detail: https://docs.shellui.com.
 
 ## Hard rules
 
-1. **Naming**: never `ShellUI`, `shellUI`, or `ShellUi`. Use `shellui` (packages, CLI, paths) or `Shellui` (proper name). Apply in code, comments, docs, and commits.
-2. **Overlays from embedded apps**: use `@shellui/sdk` for drawers, modals, toasts, and dialogs. Do not invent local overlay UI. Tiny (`@shellui/sdk/tiny`) is theme / language / nav only — not overlays.
-3. **Config is public**: no secrets in `shellui.config.json` (or split configs). Env `${VAR}` resolves at CLI load/build only.
-
-## Mental model
-
-Host shell (`@shellui/core` via CLI) embeds app URLs (often iframes). Shared nav, themes, auth, and overlays live in the shell. Child apps talk to the shell through `@shellui/sdk`.
-
-## Workflow
-
-```bash
-npm i -D @shellui/cli          # or -g; Node >= 18
-shellui init                   # shellui.config.json + $schema
-# add static/favicon.svg, logo.svg, icons as needed
-shellui start                  # alias: shellui dev
-shellui build
-```
-
-In iframe apps: `npm i @shellui/sdk` → `await shellui.init()` → toast / dialog / openModal / openDrawer.
-
-## SDK vs tiny
-
-| Need                                        | Use                                          |
-| ------------------------------------------- | -------------------------------------------- |
-| toast, dialog, modal, drawer, auth, storage | `@shellui/sdk` + `init()`                    |
-| theme / language / region / navigate only   | `@shellui/sdk/tiny` or CDN `shellui.tiny.js` |
-
-## Config quick facts
-
-- Prefer `shellui.config.json` with `$schema`: `./node_modules/@shellui/core/schemas/shellui.config.schema.json`
-- Or split `shellui.<name>.config.json` (not both). Migrate TS: `shellui config migrate`
-- `--config` / `SHELLUI_CONFIG` for non-root config dir
-- Docs: https://docs.shellui.com/cli · https://docs.shellui.com/quickstart
-
-## References
-
-- [references/config.md](references/config.md)
-- [references/cli.md](references/cli.md)
-- [references/sdk.md](references/sdk.md)
-- Example: [assets/shellui.config.example.json](assets/shellui.config.example.json)
-- Features: https://docs.shellui.com (nav, themes, layouts, backend, auth)
-- Voice / UI / composition: https://shellui.com/guidelines/ ([`guidelines`](../guidelines/) skill)
-
-## Anti-patterns
-
-- Spelling the product `ShellUI`
-- Local toast/modal/drawer libs inside iframe apps instead of the SDK
-- Using tiny for overlays
-- Secrets or private keys in config
-- Ignoring `$schema` / inventing config fields
+1. Name: `shellui` (packages, CLI, paths) or `Shellui` (prose). Never `ShellUI`, `shellUI`, `ShellUi`.
+2. Embedded apps call `await shellui.init()` before anything else. The shell sends settings only after it.
+3. Overlays (toast, dialog, modal, drawer) go through `@shellui/sdk`. No local overlay libs. Tiny has no overlays.
+4. Never hand-roll an iframe for a Shellui child app. Use `<ShelluiFrame>` or `createAppFrame`.
+5. Origins are exact (`https://admin.example.com`). No `*`, in config or in `postMessage`. Validate incoming `event.origin`.
+6. The shell token never reaches a child app. Children get their own session or none.
+7. Refresh tokens stay in `sessionStorage`, never `localStorage`, and never go to an app.
+8. Config is public. No secrets in `shellui.config.json`. `${VAR}` resolves at CLI load or build only.
+9. Do not invent config fields. Keep `$schema` and let validation fail loudly.
