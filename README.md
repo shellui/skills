@@ -1,67 +1,59 @@
-# shellui skills
+# Shellui Skills
 
-Official [Agent Skills](https://agentskills.io) for [Shellui](https://github.com/shellui/shellui) and related apps.
+Official [Agent Skills](https://agentskills.io) for Shellui: config, CLI, SDK and conventions for coding agents.
 
-## Guidelines
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-Voice, UI, and composition for Shellui sites and in-shell surfaces live on the public hub:
+Install a skill and your coding agent knows how to build with Shellui: the `shellui.config.json` format, the CLI, the SDK, naming and the house guidelines. The skills stay small and link to [docs.shellui.com](https://docs.shellui.com) and [shellui.com/guidelines](https://shellui.com/guidelines/) for depth. Listed on [skills.sh](https://skills.sh/shellui/skills/shellui).
 
-**https://shellui.com/guidelines/**
-
-This catalog ships thin skills that tell agents to **fetch** the published markdown (same pattern as Vercel’s writing / web-interface guideline skills). Long-form handbooks are not duplicated here.
-
-| Skill | Fetch | Human page |
-| ----- | ----- | ---------- |
-| [`guidelines`](skills/guidelines/) | parent index | [Hub](https://shellui.com/guidelines/) |
-| [`design-md`](skills/design-md/) | https://shellui.com/design.md | [Design handbook](https://shellui.com/guidelines/design/) (visual; agents use `/design.md` only) |
-| [`writing-guidelines`](skills/writing-guidelines/) | https://shellui.com/guidelines/writing.md | [Writing](https://shellui.com/guidelines/writing/) |
-| [`web-design-guidelines`](skills/web-design-guidelines/) | https://shellui.com/guidelines/web-design.md | [Web design](https://shellui.com/guidelines/web-design/) |
-
-Handbook content lives in [shellui/website](https://github.com/shellui/website) (`content/guidelines/`). The skill wrappers in this repo are the source of truth. Copies elsewhere should follow them.
-
-## Install
+## Get started
 
 ```bash
-# Product / CLI / SDK (config, overlays, naming)
 npx skills add shellui/skills --skill shellui
-
-# Guidelines (fetch shellui.com markdown)
-npx skills add shellui/skills --skill guidelines
-npx skills add shellui/skills --skill design-md
-npx skills add shellui/skills --skill writing-guidelines
-npx skills add shellui/skills --skill web-design-guidelines
-
-# Or globally across all your projects
-npx skills add shellui/skills --skill shellui -g
 ```
 
-Update:
+Add `-g` to install it for every project on your machine. Update with `npx skills update`. To install by hand, copy `skills/<name>/` into `.agents/skills/<name>/` or `.cursor/skills/<name>/`.
 
-```bash
-npx skills update
-```
-
-Manual copy: put `skills/<name>/` into `.agents/skills/<name>/` or `.cursor/skills/<name>/`.
+New to Shellui? Point your agent at [shellui.ai](https://shellui.ai) first.
 
 ## Skills
 
-| Skill | Description |
-| ----- | ----------- |
-| [`shellui`](skills/shellui/) | Config, CLI, SDK vs tiny, naming, overlays |
-| [`guidelines`](skills/guidelines/) | Parent index → https://shellui.com/guidelines/ |
-| [`design-md`](skills/design-md/) | Fetch https://shellui.com/design.md first when composing pages |
-| [`writing-guidelines`](skills/writing-guidelines/) | Fetch writing handbook; review prose |
-| [`web-design-guidelines`](skills/web-design-guidelines/) | Fetch web design handbook; review UI / a11y / chrome |
+| Skill | What it gives the agent |
+| --- | --- |
+| [`shellui`](skills/shellui/) | Config, CLI, SDK, frames and auth, naming |
+| [`guidelines`](skills/guidelines/) | Index of the [Shellui guidelines](https://shellui.com/guidelines/) |
+| [`design-md`](skills/design-md/) | Fetches [design.md](https://shellui.com/design.md) before composing a page |
+| [`writing-guidelines`](skills/writing-guidelines/) | Fetches the [writing guide](https://shellui.com/guidelines/writing/) and reviews prose |
+| [`web-design-guidelines`](skills/web-design-guidelines/) | Fetches the [web design guide](https://shellui.com/guidelines/web-design/) and reviews UI |
+
+```bash
+npx skills add shellui/skills --skill writing-guidelines
+```
+
+The guideline skills are thin wrappers. The handbooks live in [shellui/website](https://github.com/shellui/website) under `content/guidelines/`.
 
 ## Contributing
 
-- Keep skills small (token budget). Prefer bullets; link https://docs.shellui.com for product depth and https://shellui.com/guidelines/ for voice/UI/composition.
-- Guideline skills must stay thin wrappers that fetch public URLs. Do not paste handbook bodies into this repo.
-- When Shellui CLI/SDK/config breaks, update the matching skill and bump `metadata.version` + that skill’s `CHANGELOG.md`.
-- When public guideline versions change on shellui.com, bump the matching wrapper `metadata.version` to match the published frontmatter `version`.
-- Note catalog-level changes in [CHANGELOG.md](CHANGELOG.md).
-- Add new skills under `skills/<name>/` with a valid `SKILL.md`.
+- Keep skills small. Prefer bullets and link to the docs for depth.
+- Guideline skills fetch public URLs. Do not paste handbook bodies here.
+- When the CLI, the SDK or the config changes, update the matching skill and bump its `metadata.version` and `CHANGELOG.md`.
+- When a guideline version changes on shellui.com, bump the wrapper `metadata.version` to match.
+- Add new skills under `skills/<name>/` with a valid `SKILL.md`, and note catalog changes in [CHANGELOG.md](CHANGELOG.md).
+
+## Shellui projects
+
+| Project | What it does |
+| --- | --- |
+| [shellui](https://github.com/shellui/shellui) | The shell, CLI and SDK |
+| [admin](https://github.com/shellui/admin) | Administration app inside the shell |
+| [files](https://github.com/shellui/files) | File explorer for storage-service |
+| [identity-service](https://github.com/shellui/identity-service) | Sign-in, companies and tokens |
+| [storage-service](https://github.com/shellui/storage-service) | File storage |
+| [hosting-service](https://github.com/shellui/hosting-service) | Deploys and serves Shellui apps |
+| [email-service](https://github.com/shellui/email-service) | Templates and sends email |
+| [skills](https://github.com/shellui/skills) | Agent Skills for coding agents |
+| [playground](https://github.com/shellui/playground) | Live demo of the shell |
 
 ## License
 
-MIT
+[MIT](LICENSE)
