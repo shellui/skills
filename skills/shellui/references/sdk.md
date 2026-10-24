@@ -1,14 +1,10 @@
 # SDK
 
-## Full SDK (embedded apps)
-
-```bash
-npm i @shellui/sdk
-```
+## Full SDK (`@shellui/sdk`)
 
 ```js
 import { shellui } from '@shellui/sdk';
-await shellui.init(); // required first
+await shellui.init(); // first, always
 
 shellui.toast({ title: 'Saved', type: 'success' });
 shellui.dialog({ title: 'Delete?', mode: 'okCancel', onOk: () => {} });
@@ -16,27 +12,29 @@ shellui.openModal('/settings');
 shellui.openDrawer({ url: '/filters', position: 'right', size: '400px' });
 shellui.closeDrawer();
 shellui.navigate('/dashboard');
-shellui.login({ method: 'oauth', provider: 'github' }); // iframe-safe
+shellui.login({ method: 'oauth', provider: 'github' });
 ```
 
-**Rule:** drawers, modals, toasts, dialogs → SDK. Do not duplicate shell chrome in the iframe.
+Also `shellui.storage`, `selectFiles`, `selectFolders`. Details: https://docs.shellui.com/sdk
 
-Also: storage (`shellui.storage`), pickers (`selectFiles` / `selectFolders`). Details: https://docs.shellui.com/sdk
+Router-less React app, two-way route sync with the shell:
 
-## Tiny (theme / language / nav only)
+```tsx
+import { useShelluiNavigation } from '@shellui/sdk/react';
+const { location, navigate } = useShelluiNavigation(import.meta.env.BASE_URL);
+```
+
+Apps with React Router or TanStack Router need nothing: the SDK reports history changes.
+
+## Tiny (`@shellui/sdk/tiny`): theme, language, nav only
 
 ```js
 import shellui from '@shellui/sdk/tiny';
 await shellui.ready;
 shellui.applyTheme();
 shellui.on('theme', () => shellui.applyTheme());
-shellui.navigate('/dashboard');
 ```
 
-CDN: `https://cdn.jsdelivr.net/npm/@shellui/sdk/dist/shellui.tiny.js` (sets `window.shellui`).
+CDN: `https://cdn.jsdelivr.net/npm/@shellui/sdk/dist/shellui.tiny.js` (sets `window.shellui`). No auth, storage or overlays.
 
-**Not in tiny:** auth, storage, toast, dialog, modal, drawer.
-
-## Windows layout
-
-`layout: 'windows'` is shell config (experimental). Child apps still use the SDK for overlays; do not build a parallel windowing UI in the iframe.
+`layout: "windows"` is shell config. Do not build windowing inside an iframe.

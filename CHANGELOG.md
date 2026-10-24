@@ -10,18 +10,28 @@ Individual skills also keep their own changelogs under `skills/<name>/CHANGELOG.
 <!---
 ## [Unreleased] - yyyy-mm-dd
 
-### ✨ Feature – for new features
-### 🛠 Improvements – for general improvements
-### 🚨 Changed – for changes in existing functionality
-### ⚠️ Deprecated – for soon-to-be removed features
-### 📚 Documentation – for documentation update
-### 🗑 Removed – for removed features
-### 🐛 Bug Fixes – for any bug fixes
-### 🔒 Security – in case of vulnerabilities
-### 🏗 Chore – for tidying code
+### ✨ Feature - for new features
+### 🛠 Improvements - for general improvements
+### 🚨 Changed - for changes in existing functionality
+### ⚠️ Deprecated - for soon-to-be removed features
+### 📚 Documentation - for documentation update
+### 🗑 Removed - for removed features
+### 🐛 Bug Fixes - for any bug fixes
+### 🔒 Security - in case of vulnerabilities
+### 🏗 Chore - for tidying code
 
 See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog-emoji/master/CHANGELOG.md
 -->
+
+## [1.2.0] - 2026-10-24
+
+### ✨ Feature
+
+- [`shellui`](skills/shellui/) skill 1.1.0: app frames, token exchange, task routing table
+
+### 🏗 Chore
+
+- Changelog template uses hyphens instead of en dashes
 
 ## [1.1.0] - 2026-09-15
 
