@@ -4,18 +4,22 @@ description: >-
   Use when working on a Shellui project: shellui.config.json, the shellui CLI
   (init, start, build, deploy, login), @shellui/sdk in embedded iframe apps
   (toast, dialog, modal, drawer, auth, storage), app frames (ShelluiFrame,
-  createAppFrame), per-app identity servers or regional token exchange. Not
-  for generic React or Vite work outside a Shellui shell.
+  createAppFrame), per-app identity servers or regional token exchange, or any
+  Shellui PDF, report, deck, one-pager, or other printed or exported document.
+  Printed documents start from the brand kit templates and references/print.md.
+  Not for generic React or Vite work outside a Shellui shell.
 license: MIT
 metadata:
   author: shellui
-  version: '1.1.0'
+  version: '1.2.0'
   shellui: '>=0.7.0-alpha.5'
 ---
 
 # Shellui
 
 Host shell (`@shellui/core`, run by `@shellui/cli`) embeds apps in iframes. Nav, themes, auth and overlays live in the shell. Apps talk to it through `@shellui/sdk`.
+
+A Shellui PDF, report, deck, one-pager, or other printed document starts from the matching template in `assets/print/` and follows [references/print.md](references/print.md). The brand kit PDF is the visual reference: https://shellui.com/brand-assets/shellui-brand-kit-v1.pdf.
 
 ## Read only what the task needs
 
@@ -27,8 +31,9 @@ Host shell (`@shellui/core`, run by `@shellui/cli`) embeds apps in iframes. Nav,
 | App inside an app, per-app identity server, regional sessions | [references/frames-and-auth.md](references/frames-and-auth.md)              |
 | Write user-facing copy (UI strings, docs, emails)             | Fetch https://shellui.com/guidelines/writing.md (`writing-guidelines` skill) |
 | Build a page or shell chrome                                  | Fetch https://shellui.com/design.md and https://shellui.com/guidelines/web-design.md (`design-md`, `web-design-guidelines` skills) |
+| PDF, report, deck, one-pager, or any printed or exported document | [references/print.md](references/print.md) and the matching file in [assets/print/](assets/print/). Visual reference: https://shellui.com/brand-assets/shellui-brand-kit-v1.pdf |
 
-Fetch guideline `.md` files only for copy or UI work. Hub: https://shellui.com/guidelines/. API detail: https://docs.shellui.com.
+Fetch guideline `.md` files for copy, UI, or print work. For a PDF, read [references/print.md](references/print.md) before the public summary. Hub: https://shellui.com/guidelines/. API detail: https://docs.shellui.com.
 
 ## Hard rules
 
@@ -41,3 +46,4 @@ Fetch guideline `.md` files only for copy or UI work. Hub: https://shellui.com/g
 7. Refresh tokens stay in `sessionStorage`, never `localStorage`, and never go to an app.
 8. Config is public. No secrets in `shellui.config.json`. `${VAR}` resolves at CLI load or build only.
 9. Do not invent config fields. Keep `$schema` and let validation fail loudly.
+10. Any Shellui PDF or printed document starts from the matching template in `assets/print/` and follows `references/print.md`. The brand kit PDF is the visual reference.

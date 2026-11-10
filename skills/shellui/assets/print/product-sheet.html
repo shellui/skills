@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shellui Product sheet</title>
+<style>
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:block;src:url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD6llzAA.ttf) format("truetype")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:500;font-display:block;src:url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD2FlzAA.ttf) format("truetype")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:block;src:url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDNF5zAA.ttf) format("truetype")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:650;font-display:block;src:url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDNF5zAA.ttf) format("truetype")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:block;src:url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n5ig.ttf) format("truetype")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:600;font-display:block;src:url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAO8lc.ttf) format("truetype")}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:"IBM Plex Sans",sans-serif;color:#111827;background:#fff;font-size:10.5pt;line-height:17pt;font-feature-settings:normal;text-rendering:geometricPrecision}
+.mono,code{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.tnum,table.t{font-variant-numeric:tabular-nums}
+img.logo,img.ghost{display:block}
+img.ghost{filter:brightness(0) invert(95.3%)}
+.page{position:relative;overflow:hidden;background:#fff}
+.sample{position:absolute;font-size:6.5pt;line-height:8pt;color:#6b7280}
+.body{position:absolute;left:20mm;right:20mm;top:20mm;bottom:22mm}
+.rh{position:absolute;left:20mm;right:20mm;top:10mm;display:flex;justify-content:space-between;font-size:7.5pt;line-height:10pt;color:#4b5563}
+.ft{position:absolute;left:20mm;right:20mm;bottom:10mm;display:flex;justify-content:space-between;align-items:baseline;font-size:7.5pt;line-height:10pt;color:#4b5563}
+.ft b{color:#111827;font-weight:600}
+.g{display:grid;grid-template-columns:repeat(12,1fr);column-gap:6mm}
+.g:not(.feature)>.s3:has(+.s9){grid-column:1/-1;padding-right:0;padding-top:0!important}
+.g:not(.feature)>.s3:has(+.s9)+.s9{grid-column:1/-1;margin-top:3mm}
+.g:not(.feature)>.s3:empty:has(+.s9){display:none}
+.g:not(.feature)>.s3:empty+.s9{margin-top:0}
+.g.feature>.s3:has(+.s9){padding-right:2mm}
+.cols2{column-count:2;column-gap:8mm}
+.cols2 p,.cols2 li{break-inside:avoid-column}
+.cols2 h2,.cols2 h3,.cols2 h4{break-after:avoid-column}
+.cols2>:first-child{margin-top:0!important}
+.g.pair{column-gap:8mm}
+.s3{grid-column:span 3}.s6{grid-column:span 6}.s9{grid-column:span 9}
+.sec{font-size:8.5pt;line-height:12pt;font-weight:600;color:#8a6300}
+h1{font-size:26pt;line-height:32pt;font-weight:600;letter-spacing:-0.01em;text-wrap:balance;margin-top:12mm}
+h1:first-child,h2:first-child,h3:first-child,h4:first-child{margin-top:0}
+h2{font-size:15pt;line-height:20pt;font-weight:600;letter-spacing:-0.005em;margin-top:10mm}
+h3{font-size:11.5pt;line-height:15.5pt;font-weight:600;margin-top:6mm}
+h4{font-size:10pt;line-height:14pt;font-weight:600;margin-top:4mm}
+h1+*,h2+*{margin-top:4mm!important}
+h3+*,h4+*{margin-top:2mm!important}
+.lede{font-size:12pt;line-height:18pt;color:#4b5563;margin-top:4mm}
+p,ul.l li,ol.n li{font-size:10.5pt;line-height:17pt}
+p+p{margin-top:3.5mm}
+.small,ul.small li{font-size:8pt;line-height:12pt;color:#4b5563}
+.blk{margin-top:10mm!important;margin-bottom:10mm}
+.blk:last-child{margin-bottom:0}
+.fcap{font-size:8pt;line-height:12pt;color:#4b5563;margin-top:2mm}
+.fcap b{color:#111827;font-weight:600}
+.tiny{font-size:7.5pt;line-height:10pt;color:#4b5563}
+.muted{color:#4b5563}
+ul.l{list-style:none;margin-top:2mm}
+ul.l li{position:relative;padding-left:4.5mm;margin-top:2mm}
+ul.l li:before{content:"";position:absolute;left:0.4mm;top:0.6em;width:1.1mm;height:1.1mm;border-radius:50%;background:#111827}
+ol.n{margin-top:2mm;padding-left:5mm}
+ol.n li{margin-top:2mm;padding-left:1mm}
+code{font-size:0.86em;background:#f3f4f6;border-radius:1mm;padding:0 1mm}
+.code{font-family:"IBM Plex Mono",monospace;font-size:8.5pt;line-height:13pt}
+table.t{width:100%;border-collapse:collapse;font-size:8.5pt;line-height:12.5pt}
+table.t th:first-child,table.t td:first-child{padding-left:0!important}
+table.t th:last-child,table.t td:last-child{padding-right:0!important}
+table.t th{text-align:left;font-weight:600;padding:2.5mm 3mm;border-bottom:0.8pt solid #111827;vertical-align:bottom}
+table.t td{padding:2.5mm 3mm;border-bottom:0.4pt solid #e5e7eb;vertical-align:top}
+table.t .r{text-align:right;padding-right:0;font-variant-numeric:tabular-nums}
+table.t-tight td{padding-top:1.8mm;padding-bottom:1.8mm}
+.box{background:#f9fafb;border-radius:2mm;padding:8mm}
+.tag{display:inline-block;font-size:7pt;line-height:9pt;font-weight:600;padding:0.6mm 1.8mm;border-radius:10mm;background:#fdf6e3;color:#8a6300;border:0.4pt solid #f1d58f}
+.ph{display:inline-block;padding:0 0.8mm;border:0.5pt dashed #9ca3af;border-radius:0.6mm;color:#4b5563;line-height:1.25}
+.kw{color:#8a6300}
+
+@page{size:A4;margin:0}
+.page{width:210mm;height:297mm}
+.sample{top:5mm;right:20mm}
+</style>
+</head>
+<body>
+<!-- Sample data from the Shellui brand kit v1 (October 2026). Dashed boxes are placeholders. The gray template label is kit chrome: drop it when you ship a real document. -->
+<section class="page"><div class="sample">Template 8.7, product sheet. Sample content</div><div class="body"><div style="display:flex;justify-content:space-between;align-items:center"><img class="logo" alt="Shellui" src="https://shellui.com/brand-assets/logo/shellui-wordmark-ink.svg" style="height:6mm;width:22.756mm"><span class="small">Product sheet, October 2026</span></div>
+<h1 style="font-size:32pt;line-height:36pt;margin-top:10mm;max-width:150mm">The shell around your web app</h1>
+<p class="lede" style="max-width:140mm">Shellui is an open-source web app development platform: a microfrontend shell that wraps your application with shared navigation, authentication, storage, and administration.</p>
+<div style="margin-top:10mm"><svg viewBox="0 0 170 46" width="170mm" height="46mm" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans">
+<rect x="0.3" y="0.3" width="169.4" height="45.4" rx="3" fill="#fff" stroke="#e5e7eb" stroke-width="0.4"/>
+<rect x="0.3" y="0.3" width="169.4" height="10" rx="3" fill="#f9fafb"/><line x1="0" y1="10.3" x2="170" y2="10.3" stroke="#e5e7eb" stroke-width="0.4"/>
+<image href="https://shellui.com/brand-assets/logo/shellui-mark-ink.svg" x="5" y="2.8" width="3.3" height="4.6"/>
+<text x="12" y="6.6" font-size="2.8" fill="#111827" font-weight="600">Shell</text>
+<text x="24" y="6.6" font-size="2.6" fill="#4b5563">Navigation, account, theme, locale</text>
+<rect x="150" y="3" width="15" height="4.4" rx="0.9" fill="#e3a512"/>
+<text x="157.5" y="6" font-size="2.2" text-anchor="middle" fill="#1a1408" font-weight="600">Account</text>
+<rect x="0.3" y="10.3" width="34" height="35.4" fill="#f9fafb"/><rect x="5" y="16" width="22" height="1.6" rx="0.8" fill="#111827"/><rect x="5" y="22" width="18" height="1.6" rx="0.8" fill="#9ca3af"/><rect x="5" y="28" width="22" height="1.6" rx="0.8" fill="#9ca3af"/><rect x="5" y="34" width="18" height="1.6" rx="0.8" fill="#9ca3af"/><rect x="5" y="40" width="22" height="1.6" rx="0.8" fill="#9ca3af"/>
+<rect x="40" y="16" width="124" height="24" rx="2" fill="#fdf6e3" stroke="#e3a512" stroke-width="0.4" stroke-dasharray="1.2 0.8"/>
+<text x="102" y="27" font-size="4" text-anchor="middle" fill="#111827" font-weight="600">Your app, in an iframe</text>
+<text x="102" y="33" font-size="2.8" text-anchor="middle" fill="#4b5563">Any framework. Talks to the shell through @shellui/sdk</text>
+</svg></div>
+<div class="g pair" style="margin-top:10mm"><div class="s6"><h3 style="margin-top:0">What ships today</h3><div style="margin-top:2mm"><div style="padding:2mm 0;border-top:0.4pt solid #e5e7eb"><div style="font-weight:600">Shell and SDK</div><div class="small" style="color:#4b5563;margin-top:0.5mm">Iframe host with shared navigation, theme, toasts, and modals. Your app talks to it through <code>@shellui/sdk</code>.</div></div><div style="padding:2mm 0;border-top:0.4pt solid #e5e7eb"><div style="font-weight:600">Identity</div><div class="small" style="color:#4b5563;margin-top:0.5mm">identity-service handles sign-in, magic links, OAuth, and sessions.</div></div><div style="padding:2mm 0;border-top:0.4pt solid #e5e7eb"><div style="font-weight:600">Administration</div><div class="small" style="color:#4b5563;margin-top:0.5mm">Users, roles, and settings at <code>/admin</code>, embedded in the shell.</div></div><div style="padding:2mm 0;border-top:0.4pt solid #e5e7eb"><div style="font-weight:600">Storage and Files</div><div class="small" style="color:#4b5563;margin-top:0.5mm">storage-service stores uploads. The Files app lets people browse them.</div></div><div style="padding:2mm 0;border-top:0.4pt solid #e5e7eb"><div style="font-weight:600">Email</div><div class="small" style="color:#4b5563;margin-top:0.5mm">email-service sends transactional mail, newsletters, and broadcasts.</div></div><div style="padding:2mm 0;border-top:0.4pt solid #e5e7eb"><div style="font-weight:600">Hosting</div><div class="small" style="color:#4b5563;margin-top:0.5mm">hosting-service deploys and serves apps.</div></div></div></div>
+<div class="s6"><h3 style="margin-top:0">Run it your way</h3>
+<div style="margin-top:2mm;padding:2.6mm 0;border-top:0.4pt solid #e5e7eb"><div style="font-weight:600">Self-host, free</div><div class="small" style="margin-top:0.5mm">MIT licensed. Docker images for every service on hub.docker.com/u/shellui.</div></div>
+<div style="padding:2.6mm 0;border-top:0.4pt solid #e5e7eb"><div style="font-weight:600">Shellui hosting</div><div class="small" style="margin-top:0.5mm">Managed hosting for the shell and its services. Details on shellui.com.</div></div>
+<div style="padding:2.6mm 0;border-top:0.4pt solid #e5e7eb"><div style="font-weight:600">Expert help</div><div class="small" style="margin-top:0.5mm">Architecture, custom work, and support from the maintainer.</div></div>
+<div class="box mono" style="margin-top:6mm;font-size:8.5pt;line-height:13pt"><span class="kw">import</span> { init } <span class="kw">from</span> "@shellui/sdk";<br><br><span class="kw">await</span> init({<br>&nbsp;&nbsp;clientId: your_client_id_here,<br>});</div>
+</div></div>
+</div>
+<div class="ft" style="border-top:0.8pt solid #111827;padding-top:3mm;bottom:12mm"><span><b>shellui.com</b>  ·  docs.shellui.com  ·  github.com/shellui  ·  Made in Zurich</span><b class="tnum">25</b></div></section>
+</body>
+</html>
