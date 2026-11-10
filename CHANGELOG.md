@@ -23,6 +23,16 @@ Individual skills also keep their own changelogs under `skills/<name>/CHANGELOG.
 See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog-emoji/master/CHANGELOG.md
 -->
 
+## [1.4.0] - 2026-11-10
+
+### ✨ Feature
+
+- [`print`](skills/print/) skill 1.0.0: standalone skill for Shellui PDFs and printed documents. It points at the shellui templates and `references/print.md`
+
+### 📚 Documentation
+
+- README lists `print`, with an install example, and names the brand kit print templates on the `shellui` row
+
 ## [1.3.0] - 2026-11-10
 
 ### ✨ Feature

@@ -20,17 +20,19 @@ New to Shellui? Point your agent at [shellui.ai](https://shellui.ai) first.
 
 | Skill | What it gives the agent |
 | --- | --- |
-| [`shellui`](skills/shellui/) | Config, CLI, SDK, frames and auth, naming, and printed documents from the brand kit |
+| [`shellui`](skills/shellui/) | Config, CLI, SDK, frames and auth, naming, and the brand kit print templates |
+| [`print`](skills/print/) | PDFs and printed documents from the brand kit templates (report, letterhead, invoice, proposal, deck) |
 | [`guidelines`](skills/guidelines/) | Index of the [Shellui guidelines](https://shellui.com/guidelines/), including [print.md](https://shellui.com/guidelines/print.md) and the [brand kit PDF](https://shellui.com/brand-assets/shellui-brand-kit-v1.pdf) |
 | [`design-md`](skills/design-md/) | Fetches [design.md](https://shellui.com/design.md) before composing a page |
 | [`writing-guidelines`](skills/writing-guidelines/) | Fetches the [writing guide](https://shellui.com/guidelines/writing/) and reviews prose |
 | [`web-design-guidelines`](skills/web-design-guidelines/) | Fetches the [web design guide](https://shellui.com/guidelines/web-design/) and reviews UI |
 
 ```bash
+npx skills add shellui/skills --skill print
 npx skills add shellui/skills --skill writing-guidelines
 ```
 
-The guideline skills are thin wrappers. The handbooks live in [shellui/website](https://github.com/shellui/website) under `content/guidelines/`.
+`print` reads the templates in [`shellui`](skills/shellui/). The guideline skills are thin wrappers. The handbooks live in [shellui/website](https://github.com/shellui/website) under `content/guidelines/`.
 
 ## Contributing
 
