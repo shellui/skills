@@ -4,7 +4,7 @@ Official [Agent Skills](https://agentskills.io) for Shellui: config, CLI, SDK an
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-Install a skill and your coding agent knows how to build with Shellui: the `shellui.config.json` format, the CLI, the SDK, naming and the house guidelines. The skills stay small and link to [docs.shellui.com](https://docs.shellui.com) and [shellui.com/guidelines](https://shellui.com/guidelines/) for depth. Listed on [skills.sh](https://skills.sh/shellui/skills/shellui).
+Install a skill and your coding agent knows how to build with Shellui: the `shellui.config.json` format, the CLI, the SDK, naming and the house guidelines. The skills stay small and link to [docs.shellui.com](https://docs.shellui.com), [shellui.com/guidelines](https://shellui.com/guidelines/), and the [brand kit PDF](https://shellui.com/brand-assets/shellui-brand-kit-v1.pdf) for depth. Listed on [skills.sh](https://skills.sh/shellui/skills/shellui).
 
 ## Get started
 
@@ -20,8 +20,8 @@ New to Shellui? Point your agent at [shellui.ai](https://shellui.ai) first.
 
 | Skill | What it gives the agent |
 | --- | --- |
-| [`shellui`](skills/shellui/) | Config, CLI, SDK, frames and auth, naming |
-| [`guidelines`](skills/guidelines/) | Index of the [Shellui guidelines](https://shellui.com/guidelines/) |
+| [`shellui`](skills/shellui/) | Config, CLI, SDK, frames and auth, naming, and printed documents from the brand kit |
+| [`guidelines`](skills/guidelines/) | Index of the [Shellui guidelines](https://shellui.com/guidelines/), including [print.md](https://shellui.com/guidelines/print.md) and the [brand kit PDF](https://shellui.com/brand-assets/shellui-brand-kit-v1.pdf) |
 | [`design-md`](skills/design-md/) | Fetches [design.md](https://shellui.com/design.md) before composing a page |
 | [`writing-guidelines`](skills/writing-guidelines/) | Fetches the [writing guide](https://shellui.com/guidelines/writing/) and reviews prose |
 | [`web-design-guidelines`](skills/web-design-guidelines/) | Fetches the [web design guide](https://shellui.com/guidelines/web-design/) and reviews UI |

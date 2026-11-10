@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.0
+
+- Printed documents start from `assets/print/` and follow `references/print.md`
+- `references/print.md` is the agent-readable brand kit (v1, October 2026): type, color, grid, logo, charts, and every section 8 template
+- Task table routes a PDF, report, deck, one-pager, or other printed document to that file first. The brand kit PDF stays the visual reference
+- Hard rule: start from the matching template
+
 ## 1.1.0
 
 - Task table routes to one reference file, guideline handbooks fetched only for copy or UI work

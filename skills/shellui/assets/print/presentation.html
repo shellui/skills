@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shellui Presentation</title>
+<style>
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:block;src:url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD6llzAA.ttf) format("truetype")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:500;font-display:block;src:url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD2FlzAA.ttf) format("truetype")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:block;src:url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDNF5zAA.ttf) format("truetype")}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:650;font-display:block;src:url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSDNF5zAA.ttf) format("truetype")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:block;src:url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n5ig.ttf) format("truetype")}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:600;font-display:block;src:url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAO8lc.ttf) format("truetype")}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:"IBM Plex Sans",sans-serif;color:#111827;background:#fff;font-size:10.5pt;line-height:17pt;font-feature-settings:normal;text-rendering:geometricPrecision}
+.mono,code{font-family:"IBM Plex Mono",ui-monospace,monospace}
+.tnum,table.t{font-variant-numeric:tabular-nums}
+img.logo,img.ghost{display:block}
+img.ghost{filter:brightness(0) invert(95.3%)}
+.page{position:relative;overflow:hidden;background:#fff}
+.sample{position:absolute;font-size:6.5pt;line-height:8pt;color:#6b7280}
+.body{position:absolute;left:20mm;right:20mm;top:20mm;bottom:22mm}
+.rh{position:absolute;left:20mm;right:20mm;top:10mm;display:flex;justify-content:space-between;font-size:7.5pt;line-height:10pt;color:#4b5563}
+.ft{position:absolute;left:20mm;right:20mm;bottom:10mm;display:flex;justify-content:space-between;align-items:baseline;font-size:7.5pt;line-height:10pt;color:#4b5563}
+.ft b{color:#111827;font-weight:600}
+.g{display:grid;grid-template-columns:repeat(12,1fr);column-gap:6mm}
+.g:not(.feature)>.s3:has(+.s9){grid-column:1/-1;padding-right:0;padding-top:0!important}
+.g:not(.feature)>.s3:has(+.s9)+.s9{grid-column:1/-1;margin-top:3mm}
+.g:not(.feature)>.s3:empty:has(+.s9){display:none}
+.g:not(.feature)>.s3:empty+.s9{margin-top:0}
+.g.feature>.s3:has(+.s9){padding-right:2mm}
+.cols2{column-count:2;column-gap:8mm}
+.cols2 p,.cols2 li{break-inside:avoid-column}
+.cols2 h2,.cols2 h3,.cols2 h4{break-after:avoid-column}
+.cols2>:first-child{margin-top:0!important}
+.g.pair{column-gap:8mm}
+.s3{grid-column:span 3}.s6{grid-column:span 6}.s9{grid-column:span 9}
+.sec{font-size:8.5pt;line-height:12pt;font-weight:600;color:#8a6300}
+h1{font-size:26pt;line-height:32pt;font-weight:600;letter-spacing:-0.01em;text-wrap:balance;margin-top:12mm}
+h1:first-child,h2:first-child,h3:first-child,h4:first-child{margin-top:0}
+h2{font-size:15pt;line-height:20pt;font-weight:600;letter-spacing:-0.005em;margin-top:10mm}
+h3{font-size:11.5pt;line-height:15.5pt;font-weight:600;margin-top:6mm}
+h4{font-size:10pt;line-height:14pt;font-weight:600;margin-top:4mm}
+h1+*,h2+*{margin-top:4mm!important}
+h3+*,h4+*{margin-top:2mm!important}
+.lede{font-size:12pt;line-height:18pt;color:#4b5563;margin-top:4mm}
+p,ul.l li,ol.n li{font-size:10.5pt;line-height:17pt}
+p+p{margin-top:3.5mm}
+.small,ul.small li{font-size:8pt;line-height:12pt;color:#4b5563}
+.blk{margin-top:10mm!important;margin-bottom:10mm}
+.blk:last-child{margin-bottom:0}
+.fcap{font-size:8pt;line-height:12pt;color:#4b5563;margin-top:2mm}
+.fcap b{color:#111827;font-weight:600}
+.tiny{font-size:7.5pt;line-height:10pt;color:#4b5563}
+.muted{color:#4b5563}
+ul.l{list-style:none;margin-top:2mm}
+ul.l li{position:relative;padding-left:4.5mm;margin-top:2mm}
+ul.l li:before{content:"";position:absolute;left:0.4mm;top:0.6em;width:1.1mm;height:1.1mm;border-radius:50%;background:#111827}
+ol.n{margin-top:2mm;padding-left:5mm}
+ol.n li{margin-top:2mm;padding-left:1mm}
+code{font-size:0.86em;background:#f3f4f6;border-radius:1mm;padding:0 1mm}
+.code{font-family:"IBM Plex Mono",monospace;font-size:8.5pt;line-height:13pt}
+table.t{width:100%;border-collapse:collapse;font-size:8.5pt;line-height:12.5pt}
+table.t th:first-child,table.t td:first-child{padding-left:0!important}
+table.t th:last-child,table.t td:last-child{padding-right:0!important}
+table.t th{text-align:left;font-weight:600;padding:2.5mm 3mm;border-bottom:0.8pt solid #111827;vertical-align:bottom}
+table.t td{padding:2.5mm 3mm;border-bottom:0.4pt solid #e5e7eb;vertical-align:top}
+table.t .r{text-align:right;padding-right:0;font-variant-numeric:tabular-nums}
+table.t-tight td{padding-top:1.8mm;padding-bottom:1.8mm}
+.box{background:#f9fafb;border-radius:2mm;padding:8mm}
+.tag{display:inline-block;font-size:7pt;line-height:9pt;font-weight:600;padding:0.6mm 1.8mm;border-radius:10mm;background:#fdf6e3;color:#8a6300;border:0.4pt solid #f1d58f}
+.ph{display:inline-block;padding:0 0.8mm;border:0.5pt dashed #9ca3af;border-radius:0.6mm;color:#4b5563;line-height:1.25}
+.kw{color:#8a6300}
+
+@page{size:297mm 167.0625mm;margin:0}
+.page{width:297mm;height:167.0625mm}
+.page+.page{break-before:page}
+.sample{right:12mm;top:4mm}
+.page ul.l li,.page p{font-family:"IBM Plex Sans",sans-serif}
+</style>
+</head>
+<body>
+<!-- Sample data from the Shellui brand kit v1 (October 2026). Dashed boxes are placeholders. The gray template label is kit chrome: drop it when you ship a real document. -->
+<section class="page"><div class="sample">Template 8.9, presentation title slide, 16:9</div><div style="position:absolute;right:-20mm;bottom:-70mm;"><img class="ghost" alt="" src="https://shellui.com/brand-assets/logo/shellui-mark-ink.svg" style="height:200mm;width:144.834mm"></div>
+<div style="position:absolute;left:12mm;top:12mm"><img class="logo" alt="Shellui" src="https://shellui.com/brand-assets/logo/shellui-mark-ink.svg" style="height:6mm;width:4.345mm"></div>
+<div style="position:absolute;left:12mm;top:52mm;width:190mm">
+<div style="font-size:34pt;line-height:38pt;font-weight:650;letter-spacing:-0.025em;text-wrap:balance">Ship sooner without rebuilding basic features</div>
+<div style="font-size:15pt;line-height:21pt;color:#4b5563;margin-top:6mm">Shellui overview for engineering teams</div></div>
+<div style="position:absolute;left:12mm;right:12mm;bottom:10mm;display:flex;justify-content:space-between;font-size:9pt;color:#4b5563"><span><b style="color:#111827">Speaker name</b>, role</span><span>October 2026</span></div></section><section class="page"><div class="sample">Template 8.9, presentation content slide, 16:9. Example data</div><div style="position:absolute;left:12mm;top:12mm;right:12mm;display:flex;justify-content:space-between;align-items:center"><img class="logo" alt="Shellui" src="https://shellui.com/brand-assets/logo/shellui-mark-ink.svg" style="height:6mm;width:4.345mm"><span style="font-size:9pt;color:#4b5563">Why a shell</span></div>
+<div style="position:absolute;left:12mm;top:30mm;width:130mm">
+<div style="font-size:24pt;line-height:29pt;font-weight:650;letter-spacing:-0.02em">Your team builds the product, not the chrome</div>
+<ul class="l" style="margin-top:6mm;font-size:13pt;line-height:19pt"><li style="max-width:none;margin-top:2.5mm;padding-left:5mm">Sign-in, roles, and settings come with the shell</li><li style="max-width:none;margin-top:2.5mm;padding-left:5mm">Your app runs in an iframe, in any framework</li><li style="max-width:none;margin-top:2.5mm;padding-left:5mm">MIT licensed and self-hosted</li></ul></div>
+<div style="position:absolute;left:160mm;top:30mm;width:125mm"><div style="font-size:10pt;font-weight:600">Days of work per area, example project</div><svg viewBox="0 0 120 72" width="120mm" height="72mm" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans"><line x1="10" x2="118" y1="64.00" y2="64.00" stroke="#9ca3af" stroke-width="0.3"/><text x="8.5" y="64.90" font-size="2.8899999999999997" fill="#4b5563" text-anchor="end">0</text><line x1="10" x2="118" y1="49.00" y2="49.00" stroke="#e5e7eb" stroke-width="0.2"/><text x="8.5" y="49.90" font-size="2.8899999999999997" fill="#4b5563" text-anchor="end">6</text><line x1="10" x2="118" y1="34.00" y2="34.00" stroke="#e5e7eb" stroke-width="0.2"/><text x="8.5" y="34.90" font-size="2.8899999999999997" fill="#4b5563" text-anchor="end">12</text><line x1="10" x2="118" y1="19.00" y2="19.00" stroke="#e5e7eb" stroke-width="0.2"/><text x="8.5" y="19.90" font-size="2.8899999999999997" fill="#4b5563" text-anchor="end">18</text><line x1="10" x2="118" y1="4.00" y2="4.00" stroke="#e5e7eb" stroke-width="0.2"/><text x="8.5" y="4.90" font-size="2.8899999999999997" fill="#4b5563" text-anchor="end">24</text><rect x="14.10" y="29.00" width="13.39" height="35.00" fill="#9ca3af" rx="0.4"/><text x="20.80" y="68.00" font-size="2.8899999999999997" fill="#4b5563" text-anchor="middle">Auth</text><rect x="35.70" y="41.50" width="13.39" height="22.50" fill="#9ca3af" rx="0.4"/><text x="42.40" y="68.00" font-size="2.8899999999999997" fill="#4b5563" text-anchor="middle">Roles</text><rect x="57.30" y="49.00" width="13.39" height="15.00" fill="#9ca3af" rx="0.4"/><text x="64.00" y="68.00" font-size="2.8899999999999997" fill="#4b5563" text-anchor="middle">Settings</text><rect x="78.90" y="44.00" width="13.39" height="20.00" fill="#9ca3af" rx="0.4"/><text x="85.60" y="68.00" font-size="2.8899999999999997" fill="#4b5563" text-anchor="middle">Uploads</text><rect x="100.50" y="6.50" width="13.39" height="57.50" fill="#e3a512" rx="0.4"/><text x="107.20" y="68.00" font-size="2.8899999999999997" fill="#4b5563" text-anchor="middle">Your app</text><text x="107.20" y="5.10" font-size="3.4" fill="#111827" font-weight="600" text-anchor="middle">23</text></svg><div style="font-size:8pt;color:#4b5563">Example data. Gold marks the time left for your own product.</div></div>
+<div style="position:absolute;left:12mm;bottom:22mm;width:130mm;border-left:1.2mm solid #111827;padding:1mm 0 1mm 5mm;font-size:13pt;line-height:19pt"><b style="font-weight:600">37 of 60 days</b> go to sign-in, roles, settings, and uploads in this example. The shell gives them back to your product.</div>
+<div style="position:absolute;left:12mm;right:12mm;bottom:8mm;display:flex;justify-content:space-between;font-size:8pt;color:#4b5563"><span>shellui.com</span><span class="tnum">28</span></div></section>
+</body>
+</html>

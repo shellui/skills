@@ -23,6 +23,17 @@ Individual skills also keep their own changelogs under `skills/<name>/CHANGELOG.
 See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog-emoji/master/CHANGELOG.md
 -->
 
+## [1.3.0] - 2026-11-10
+
+### ✨ Feature
+
+- [`shellui`](skills/shellui/) skill 1.2.0: agent-readable brand kit and section 8 print templates. A PDF starts from the matching template
+- [`guidelines`](skills/guidelines/) skill 1.1.0: print row links the brand kit PDF, print.md, and the shellui templates
+
+### 📚 Documentation
+
+- README links the brand kit PDF and print.md from the skills table
+
 ## [1.2.0] - 2026-10-24
 
 ### ✨ Feature
