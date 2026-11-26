@@ -1,10 +1,10 @@
 # Shellui Skills
 
-Official [Agent Skills](https://agentskills.io) for Shellui: config, CLI, SDK and conventions for coding agents.
+Official [Agent Skills](https://agentskills.io) for Shellui: config, CLI, SDK, and conventions for coding agents. Shellui is AI native.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
-Install a skill and your coding agent knows how to build with Shellui: the `shellui.config.json` format, the CLI, the SDK, naming and the house guidelines. The skills stay small and link to [docs.shellui.com](https://docs.shellui.com), [shellui.com/guidelines](https://shellui.com/guidelines/), and the [brand kit PDF](https://shellui.com/brand-assets/shellui-brand-kit-v1.pdf) for depth. Listed on [skills.sh](https://skills.sh/shellui/skills/shellui).
+Install a skill and your coding agent knows how to build with Shellui: the `shellui.config.json` format, the CLI, the SDK, naming, the house guidelines, and the [Model Context Protocol (MCP) server](https://shellui.com/mcp/). The skills stay small and link to [docs.shellui.com](https://docs.shellui.com), [shellui.com/guidelines](https://shellui.com/guidelines/), and the [brand kit PDF](https://shellui.com/brand-assets/shellui-brand-kit-v1.pdf) for depth. Listed on [skills.sh](https://skills.sh/shellui/skills/shellui).
 
 ## Get started
 
@@ -14,13 +14,13 @@ npx skills add shellui/skills --skill shellui
 
 Add `-g` to install it for every project on your machine. Update with `npx skills update`. To install by hand, copy `skills/<name>/` into `.agents/skills/<name>/` or `.cursor/skills/<name>/`.
 
-New to Shellui? Point your agent at [shellui.ai](https://shellui.ai) first.
+New to Shellui? Point your agent at [shellui.ai](https://shellui.ai) first. To work in your Shellui companies, connect `https://ai.shellui.com/mcp`. Setup is on [Shellui MCP](https://shellui.com/mcp/).
 
 ## Skills
 
 | Skill | What it gives the agent |
 | --- | --- |
-| [`shellui`](skills/shellui/) | Config, CLI, SDK, frames and auth, naming, and the brand kit print templates |
+| [`shellui`](skills/shellui/) | Config, CLI, SDK, frames and auth, naming, the brand kit print templates, and the MCP server at `https://ai.shellui.com/mcp` |
 | [`print`](skills/print/) | PDFs and printed documents from the brand kit templates (report, letterhead, invoice, proposal, deck) |
 | [`guidelines`](skills/guidelines/) | Index of the [Shellui guidelines](https://shellui.com/guidelines/), including [print.md](https://shellui.com/guidelines/print.md) and the [brand kit PDF](https://shellui.com/brand-assets/shellui-brand-kit-v1.pdf) |
 | [`design-md`](skills/design-md/) | Fetches [design.md](https://shellui.com/design.md) before composing a page |
@@ -53,6 +53,7 @@ npx skills add shellui/skills --skill writing-guidelines
 | [storage-service](https://github.com/shellui/storage-service) | File storage |
 | [hosting-service](https://github.com/shellui/hosting-service) | Deploys and serves Shellui apps |
 | [email-service](https://github.com/shellui/email-service) | Templates and sends email |
+| [ai-service](https://github.com/shellui/ai-service) | MCP server. Clients connect at `https://ai.shellui.com/mcp` |
 | [skills](https://github.com/shellui/skills) | Agent Skills for coding agents |
 | [playground](https://github.com/shellui/playground) | Live demo of the shell |
 
