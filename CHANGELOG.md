@@ -31,7 +31,7 @@ See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog
 
 ### 📚 Documentation
 
-- README states that Shellui is AI native, names the MCP server on the `shellui` row, and adds ai-service to the project list
+- README tagline says Shellui is AI native. The `shellui` row names the MCP server. The project list adds ai-service: clients connect at `https://ai.shellui.com/mcp`
 
 ## [1.4.0] - 2026-11-10
 

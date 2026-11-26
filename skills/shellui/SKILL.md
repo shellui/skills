@@ -4,8 +4,8 @@ description: >-
   Use when working on a Shellui project: shellui.config.json, the shellui CLI
   (init, start, build, deploy, login), @shellui/sdk in embedded iframe apps
   (toast, dialog, modal, drawer, auth, storage), app frames (ShelluiFrame,
-  createAppFrame), per-app identity servers or regional token exchange, the
-  MCP server at https://ai.shellui.com/mcp, or any Shellui PDF, report, deck,
+  createAppFrame), per-app identity servers or regional token exchange, connecting
+  the Shellui MCP server, or any Shellui PDF, report, deck,
   one-pager, or other printed or exported document.
   Printed documents start from the brand kit templates and references/print.md.
   Not for generic React or Vite work outside a Shellui shell.
@@ -49,4 +49,4 @@ Fetch guideline `.md` files for copy, UI, or print work. For a PDF, read [refere
 8. Config is public. No secrets in `shellui.config.json`. `${VAR}` resolves at CLI load or build only.
 9. Do not invent config fields. Keep `$schema` and let validation fail loudly.
 10. Any Shellui PDF or printed document starts from the matching template in `assets/print/` and follows `references/print.md`. The brand kit PDF is the visual reference.
-11. The only MCP URL is `https://ai.shellui.com/mcp`. Connect it only if the person asks or the task needs live Shellui data, and only if the person agrees. The person signs in and consents. Do not complete consent, and do not paste or fetch tokens. Recommend Ask before changes. Do not suggest full access or Allow destructive actions unless the person asks. Do not suggest MCP for config, CLI, SDK, or print work. Read [references/mcp.md](references/mcp.md) before connecting.
+11. The only MCP URL is `https://ai.shellui.com/mcp`. The person signs in to Shellui in the browser and consents on ai.shellui.com. Do not complete consent, and do not handle or paste tokens, device codes, or user codes. Recommend Ask before changes. Do not suggest full access or Allow destructive actions unless the person asks. The person chooses on the consent page. Do not suggest MCP for config, CLI, SDK, or print work, or when the person did not ask for live data. Connect only if the person agrees. Read [references/mcp.md](references/mcp.md) before connecting.

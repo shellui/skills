@@ -2,9 +2,9 @@
 
 The only Model Context Protocol (MCP) URL is `https://ai.shellui.com/mcp`. One connection reaches every company and region the person can open.
 
-If this client already has it, use it. Suggest it when the person asks, or when the task needs live Shellui data. Connect only if the person agrees. Do not suggest it for config, CLI, SDK, or print work.
+If this client already has it, use it. Suggest it when the person asks for live Shellui data. Connect only if the person agrees. Do not suggest it for config, CLI, SDK, or print work, or when the person did not ask for live data.
 
-The client connects with OAuth, using dynamic client registration or device login. The person signs in to Shellui in the browser and consents on ai.shellui.com. Do not complete consent for them. Do not paste, fetch, or handle an access token, refresh token, device code, or user code.
+The client connects with OAuth, using dynamic client registration or device login. The person signs in to Shellui in the browser and consents on ai.shellui.com. Do not complete consent, and do not handle or paste tokens, device codes, or user codes.
 
 Recommend **Ask before changes**. Do not suggest **Full access** or **Allow destructive actions** unless the person asks for them. The person chooses on the consent page.
 
@@ -16,7 +16,7 @@ Access on the consent page:
 
 On the account connection, destructive tools are refused unless the person allowed them at consent. An allowed one still opens an approval page. Show that link, and do not open it.
 
-Project tools (identity, storage, hosting, and email) follow the connection's access but open at Ask. A read only connection stays read only. Full access does not skip approval on those tools. Destructive project tools still need an approval link from an owner.
+Project tools (identity, storage, hosting, and email) open at Ask even under full access, a read only connection stays read only, and destructive project calls return an owner-only approval link whatever the consent checkbox says.
 
 Find a project tool in this order: `ai_list_companies`, then `ai_company_search_tools`, then `ai_call_company_tool`.
 

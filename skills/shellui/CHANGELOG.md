@@ -3,8 +3,9 @@
 ## 1.3.0
 
 - `references/mcp.md` holds the MCP detail. Config, CLI, SDK, and print tasks do not load it
-- The only URL is `https://ai.shellui.com/mcp`. Connect only if the person asks or the task needs live Shellui data, and only if the person agrees
-- The person signs in and consents. The agent does not complete consent and does not paste or fetch tokens
+- The only URL in `SKILL.md` is `https://ai.shellui.com/mcp`, in the one MCP rule
+- Connect only if the person agrees. Do not suggest MCP for config, CLI, SDK, or print work, or when the person did not ask for live data
+- The person signs in and consents. The agent does not complete consent and does not handle or paste tokens, device codes, or user codes
 - Recommend Ask before changes. Do not suggest full access or Allow destructive actions unless the person asks
 - Project tools open at Ask. A read only connection stays read only. Destructive project tools need an approval link from an owner
 - Setup: https://shellui.com/mcp/ and https://docs.shellui.com/ai/mcp-device-login/#global-mcp-shellui-account
