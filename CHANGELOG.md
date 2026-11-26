@@ -23,6 +23,16 @@ Individual skills also keep their own changelogs under `skills/<name>/CHANGELOG.
 See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog-emoji/master/CHANGELOG.md
 -->
 
+## [1.5.0] - 2026-11-26
+
+### ✨ Feature
+
+- [`shellui`](skills/shellui/) skill 1.3.0: agents suggest the MCP server at `https://ai.shellui.com/mcp` when a task needs live Shellui data
+
+### 📚 Documentation
+
+- README names the MCP server on the `shellui` row and in the project list
+
 ## [1.4.0] - 2026-11-10
 
 ### ✨ Feature

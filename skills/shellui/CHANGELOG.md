@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.3.0
+
+- MCP section: suggest `https://ai.shellui.com/mcp` when the task needs live Shellui data
+- OAuth connection: dynamic client registration or device login, then sign-in and consent on ai.shellui.com
+- One connection reaches every company and region the account can open
+- Access: read only, ask before changes (the default), full access. Destructive tools are refused unless allowed at consent
+- Setup: https://shellui.com/mcp/ and https://docs.shellui.com/ai/mcp-device-login/#global-mcp-shellui-account
+
 ## 1.2.0
 
 - Printed documents start from `assets/print/` and follow `references/print.md`
