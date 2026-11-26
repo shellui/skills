@@ -2,10 +2,11 @@
 
 ## 1.3.0
 
-- MCP section: suggest `https://ai.shellui.com/mcp` when the task needs live Shellui data
-- OAuth connection: dynamic client registration or device login, then sign-in and consent on ai.shellui.com
-- One connection reaches every company and region the account can open
-- Access: read only, ask before changes (the default), full access. Destructive tools are refused unless allowed at consent
+- `references/mcp.md` holds the MCP detail. Config, CLI, SDK, and print tasks do not load it
+- The only URL is `https://ai.shellui.com/mcp`. Connect only if the person asks or the task needs live Shellui data, and only if the person agrees
+- The person signs in and consents. The agent does not complete consent and does not paste or fetch tokens
+- Recommend Ask before changes. Do not suggest full access or Allow destructive actions unless the person asks
+- Project tools open at Ask. A read only connection stays read only. Destructive project tools need an approval link from an owner
 - Setup: https://shellui.com/mcp/ and https://docs.shellui.com/ai/mcp-device-login/#global-mcp-shellui-account
 
 ## 1.2.0

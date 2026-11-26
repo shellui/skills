@@ -27,11 +27,11 @@ See for sample https://raw.githubusercontent.com/favoloso/conventional-changelog
 
 ### ✨ Feature
 
-- [`shellui`](skills/shellui/) skill 1.3.0: agents suggest the MCP server at `https://ai.shellui.com/mcp` when a task needs live Shellui data
+- [`shellui`](skills/shellui/) skill 1.3.0: `references/mcp.md` for `https://ai.shellui.com/mcp`, read when the task needs live Shellui data
 
 ### 📚 Documentation
 
-- README names the MCP server on the `shellui` row and in the project list
+- README states that Shellui is AI native, names the MCP server on the `shellui` row, and adds ai-service to the project list
 
 ## [1.4.0] - 2026-11-10
 
